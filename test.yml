@@ -1,0 +1,7 @@
+- name: YUM UPDATE
+  hosts: all
+  tasks:
+   - package_facts:
+      manager: "auto"
+   - debug:
+       msg: "{{ ansible_facts.packages.sudo[0] }}"
